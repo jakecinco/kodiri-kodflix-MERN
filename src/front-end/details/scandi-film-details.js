@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
-import getFilms from '../film-catalog-data';
-import '../App.css';
+import getFilms from '../film-catalog-pages/film-catalog-data';
+import '../../App.css';
 
 export default class ScandiFilmDetails extends Component {
 	constructor() {

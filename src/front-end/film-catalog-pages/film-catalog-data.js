@@ -1,9 +1,9 @@
-import theHunt from './assets/the-hunt-scandinavian.jpg';
-import bolgen from './assets/bolgen-film.jpeg';
-import girlWithTheDragonTattoo from './assets/girl-with-the-dragon-tattoo-film.jpeg';
-import snabbeCash from './assets/snabbe-cash-film.jpeg';
-import trapped from './assets/trapped-film.jpeg';
-import dicte from './assets/dicte-film.jpeg';
+import theHunt from '../assets/the-hunt-scandinavian.jpg';
+import bolgen from '../assets/bolgen-film.jpeg';
+import girlWithTheDragonTattoo from '../assets/girl-with-the-dragon-tattoo-film.jpeg';
+import snabbeCash from '../assets/snabbe-cash-film.jpeg';
+import trapped from '../assets/trapped-film.jpeg';
+import dicte from '../assets/dicte-film.jpeg';
 
 export default function getFilms() {
 	return [
