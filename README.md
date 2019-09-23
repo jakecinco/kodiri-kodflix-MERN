@@ -1,12 +1,8 @@
-# Kodiri-Kodflix 
-
-Kodflix is a student project to display a film catalog using the MERN stack (Mongo, Express, React & Node).  I chose Scandinavian Noir as a genre for the project.
-
-![kodiri-kodflix-film-catalog-challenges](src/assets/project-screenshot.png)
+# Kodiri-Kodflix-MERN
 
 ## Learning Objectives
 
-Setting up and running a back-end data-base removing data from the browser and front-end files to the back end.
+Setting up and running a back-end data-base removing data from the browser and front-end files to the back-end.
 
 #### An introduction to node.js
 
@@ -58,16 +54,15 @@ Using both at the same time creates conflicts so use one or the other in the CLI
 
 - Good articles to read to compare the two package managers:- 
 
-Installation and use [https://www.positronx.io/yarn-vs-npm-best-package-manager/]
-Which is better - op-ed[https://blog.risingstack.com/yarn-vs-npm-node-js-package-managers/]
-Scotch{https://scotch.io/tutorials/yarn-package-manager-an-improvement-over-npm]
-Keycdn (almost the same as scotch.io) [https://www.keycdn.com/blog/npm-vs-yarn]
+* Installation and use [https://www.positronx.io/yarn-vs-npm-best-package-manager/]
+* Which is better - op-ed[https://blog.risingstack.com/yarn-vs-npm-node-js-package-managers/]
+* Scotch[https://scotch.io/tutorials/yarn-package-manager-an-improvement-over-npm]
+* Keycdn (almost the same as scotch.io) [https://www.keycdn.com/blog/npm-vs-yarn]
 
 - CLI’s
 
 [npm] CLI documentation link [https://docs.npmjs.com/cli-documentation/cli] 
 [yarn] CLI documentation [https://yarnpkg.com/lang/en/docs/cli/]
-
 [yarn] [npm] start - (starts dev server)
 [yarn] [npm] run build - (builds static files for deployment [heroku] or other deployment packages)
 [yarn] [npm] test - (starts test runner)
@@ -78,10 +73,14 @@ Keycdn (almost the same as scotch.io) [https://www.keycdn.com/blog/npm-vs-yarn]
 [yarn global add] [npm install global] (installs the package required on your OS)
 [yarn run start backend] [npm run start backend]
 
-## Folder Structure
+## Challenge -18 Folder Structure
 
-Change the folder structure once you need data in the back end. Move all your files into 2 separate categories - FE (Front-end) and BE (Back-end).
+Change the folder structure once you need data in the back end.
+ 
+Move all your files into 2 separate categories - FE (Front-end) and BE (Back-end).
 
-Leave the index.js and index.css files in the BE folder.
+In the FE src folder - move all the components created and their folders
+Reconfigure imports to all pages based on the new file/ folder structure run [yarn start] make sure the front end is still working as intended
 
-Reconfigure imports to all pages based on the new file/ folder structure
+Start on the backend - import express from npm and install/add it to the project
+In the BE src folder - create an app.js file and set up express [https://expressjs.com/en/starter/hello-world.html] check that the port is listening [node src/back-end/app.js ], refresh the browser and make sure that message is working in the FE port - this shows the runner has connected.
