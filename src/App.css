@@ -1,0 +1,129 @@
+.app-container {
+	background: lightcyan;
+}
+
+.header {
+	background: lightslategray;
+}
+
+img {
+	width: 75%;
+	height: 80%;
+	margin: 10px;
+	padding: 10px;
+	border: solid 1px black;
+}
+
+.film-covers-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+	align-items: auto;
+	padding: 5px;
+	margin: 5px;
+	border: solid 1px lightyellow;
+}
+
+.film-cover {
+	padding: 30px;
+	border: dashed 2px #000080;
+	position: relative;
+	overflow: hidden;
+}
+
+.film-cover-overlay {
+	transition: top ease 1s;
+	display: none;
+	position: absolute;
+	width: 100%;
+	top: -10px;
+	right: 0;
+	background-color: blanchedalmond;
+	width: 65%;
+	align-content: center;
+	opacity: 0.7;
+}
+
+.film-cover:hover .film-cover-overlay {
+	display: block;
+	top: 0;
+}
+
+h1 {
+	text-align: center;
+	color: blanchedalmond;
+	font-family: 'Lacquer', sans-serif;
+}
+h2 {
+	font-size: 28px;
+	font-family: 'Lacquer', sans-serif;
+	color: orangered;
+	margin: 20px;
+}
+h4 {
+	font-family: 'Lacquer', sans-serif;
+	font-size: 20px;
+	text-align: center;
+	color: lightsalmon;
+}
+
+h5 {
+	font-family: 'Lacquer', sans-serif;
+	text-align: center;
+	font-size: 18px;
+	color: navy;
+}
+
+.film-details-container {
+	display: grid;
+}
+
+.details-header {
+	font-size: 28px;
+	background-color: gainsboro;
+}
+
+.details-info {
+	background-color: azure;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(150px, 2fr));
+	align-items: auto;
+	padding: 5px;
+	margin: 5px;
+}
+
+.details-cover-container {
+	display: flex;
+}
+
+.details-image {
+	height: 400px;
+	width: 250px;
+	background-color: blanchedalmond;
+	position: relative;
+	overflow: hidden;
+}
+
+.details-image-overlay {
+	position: absolute;
+	width: 10%;
+	left: 0;
+	margin: 20px;
+	padding: 10px;
+}
+
+.details-description-review {
+	background-color: aliceblue;
+}
+
+p {
+	font-size: 18px;
+	color: navy;
+	font-family: 'Lacquer', sans-serif;
+	margin: 20px;
+}
+
+@media only screen and (max-width: 400px) {
+	.film-details-container .details-cover-container {
+		display: column;
+	}
+}
