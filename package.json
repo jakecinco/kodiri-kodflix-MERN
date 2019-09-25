@@ -13,7 +13,7 @@
 		"proxy": "http://localhost:3001"
 	},
 	"scripts": {
-		"start": "react-scripts start",
+		"start-frontend": "react-scripts start",
 		"start-backend": "nodemon src/back-end/app.js",
 		"start-all": "yarn run-all -p <task1> <task2> ",
 		"build": "react-scripts build",
