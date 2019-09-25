@@ -30,7 +30,7 @@ Some other async methods are ```setState({]})``` event handlers ```onClick.()```
 
 API calls use async JS  Gray's Kodiri video [https://www.youtube.com/watch?v=pX74__nD48I]
 
-####  What is a REpresentational State Transfer or a REST-ful API?
+#### What is a REpresentational State Transfer or a REST-ful API?
 
 API's run HTTP (hyper-text-transfer-protocol) requests from back-end databases that are written in a plurality of languages that may not be text-based. As rendering on the front end is on HTML (hyper-text-markup-language) data from the back-end needs to be converted into text and then rendered on the page.
 
@@ -48,7 +48,7 @@ Read More on API's and MVC.
 [https://www.codecademy.com/articles/what-is-rest]
 [https://www.codecademy.com/articles/mvc]
 
-####  What is JSON?
+#### What is JSON?
 
 JSON is a lightweight store of data into text so that HTTP calls can be made, parsed (interpreted) by browsers and sent back to databases. As it is a text-based format it is lightweight.  It is then  reconverted back into the format that the database requires. It therefore stores and transports data quickly and efficiently.
 
