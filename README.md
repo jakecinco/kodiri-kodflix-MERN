@@ -126,7 +126,7 @@ Using both at the same time creates conflicts so use one or the other in the CLI
 16. [npm i axios react-router-dom bulma -S ] (installs axios, react router and bulma)
 17. [npm i dotenv-webpack –D] (installs the env files and webpack)
 18. [touch .env] (creates an env. file in project)
-19. [npm install nodemon] (installs nodemon to project)
+19. [yarn add nodemon] [npm install nodemon] (installs nodemon to project)
 
 ####  An introduction to Express.js
 
@@ -159,6 +159,13 @@ Reading-list:
 [https://scotch.io/tutorials/learn-to-use-the-new-router-in-expressjs-4]
 [https://jilles.me/express-routing-the-beginners-guide/]
 [https://expressjs.com/en/guide/routing.html]
+
+
+#### What is nodemon?
+
+Nodemon hot loads the back end server so you do not need to run ```node src/back-end/app.js```
+
+Check in your package-JSON for the install and read documentation [https://github.com/remy/nodemon] which helps bug fixing if you encounter challenges hot-loading.
 
 ##### Challenge -18 Setting up the back-end server with node and express
 
@@ -200,15 +207,13 @@ Written in ES6 ```app.get('/films/data', (req, res) => res.send(films.filmsData)
 
 You need to have the back-end server running so run ```node src/back-end/app.js``` and then check the path you have set up ```3000/films/data``` and the data should display on the screen
 
-<!-- ``` let getFilmCatalogData = function(id, name, country, description, review) {
-	return [{}];
-};
-module.exports = getFilmCatalogData;```
-
-This returns only the function -->
 You Tube tutorials to review at this stage:
 * Short tutorial (Traversy Media - for beginners 24-minutes on YouTube)
 * Long tutorial Mosh [https://www.youtube.com/watch?v=TlB_eWDSMt4]
 
-Set up the express server is very easy 
+#### Challenge -20 Add nodemon
+
+Install nodemon to hot-load back-end - change scripts files and run command to start backend server in terminal
+
+#### Challenge -21 Create a client-side and server-side port
 
