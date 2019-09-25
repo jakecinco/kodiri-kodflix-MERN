@@ -1,8 +1,14 @@
 # Kodiri-Kodflix-MERN
+
 This is part -2 of the challenge where the front-end remains untouched and data is moved to the back-end.
 
 ## Learning Objectives
+
 Setting up and running a back-end data-base removing data from the browser and front-end files to the back-end. Understanding the difference between each of the back-end moving parts - Node, Express and MongoDB.
+
+#### How the internet works
+
+It is useful to see the relationship between the back-end and front-end by looking at how the internet works - MDN documentation[https://developer.mozilla.org/en-US/docs/Learn/Common_questions/How_does_the_Internet_work] and a good YouTube Video:  [https://www.youtube.com/watch?v=7_LPdttKXPc]
 
 #### What is the back-end?
 
@@ -16,23 +22,43 @@ When there is data that needs to be stored securely and when there are CPU-heavy
 
 For the back-end to connect to the front-end application programming interfaces (API) are needed.
 
-####  What is a REST/ REST-ful API?
+### What is async JavaScript
+
+Chakra, V8 and SpiderMonkey - JS engines - call stack is a single-thread and non-blocking. Most non-JavaScript code is parsed synchronously - which means each thread executes one function before going on to the next. With call back functions, promises, passing by reference and other methods that can be written into JS, means that the thread can deal with multiple functions in a call stack on the task queue.
+
+Some other async methods are ```setState({]})``` event handlers ```onClick.()``` and ```setTimeOUt.()``` are some other examples.
+
+API calls use async JS  Gray's Kodiri video [https://www.youtube.com/watch?v=pX74__nD48I]
+
+####  What is a REpresentational State Transfer or a REST-ful API?
 
 API's run HTTP (hyper-text-transfer-protocol) requests from back-end databases that are written in a plurality of languages that may not be text-based. As rendering on the front end is on HTML (hyper-text-markup-language) data from the back-end needs to be converted into text and then rendered on the page.
 
 API's call the data from the database, posts this data on the web-page, updates the data that it receives from the front-end, sends it back to the back-end and saves it or if it is not needed the data is deleted. This cycle of calling, posting, updating and deleting data is also called the CRUD cycle - Create, Read, Update, Delete. 
 
-The methods are GET, PUT, POST, UPDATE, DELETE
+The methods are are GET, PUT, POST, UPDATE, DELETE - represent the current state of the object - that is where the name Representational State Transfer (REST) gets it's name and in what state (or payload/ data)  it is in during transit from client to server.
+
+It is therefore an architectural style for communicating between client-server. It is a state-less model as it is only a representation of state.
 
 The process of converting the data in javascript from a back-end database in a language that is not javascript is done through JSON - javascript object notation.
 
+Restful-React - As React defines itself as a front-end library, it allows users to figure out what works best for the app - this provides building blocks and flexiblity it also means that there are no protocols to follow, it does not prescribe how REST API's should be created.
+
+Read More on API's and MVC.
+[https://www.codecademy.com/articles/what-is-rest]
+[https://www.codecademy.com/articles/mvc]
+
 ####  What is JSON?
 
-JSON is a lightweight transpiling of data into text so that HTTP calls can be made, parsed (interpreted) by browsers and sent back to databases in this lightweight text-based format to be reconverted back into the format that the database requires.
+JSON is a lightweight store of data into text so that HTTP calls can be made, parsed (interpreted) by browsers and sent back to databases. As it is a text-based format it is lightweight.  It is then  reconverted back into the format that the database requires. It therefore stores and transports data quickly and efficiently.
 
-Methods with JSON therfore are JSON.parse/ JSON.stringify amongst others.
+Compared to XML parsing, JSON is less verbose. JSON uses less data overall so reduces cost and increases parsing speed. 
 
-Today, this work is undertaken by transpilers such as webpack, babel and node/yarn package managers.
+The main task of JSON is to convert and object into text for client-server communcations.
+
+Simple methods like ```JSON.parse()``` and ```JSON.stringify()``` have syntax that are easy to understand. Like JS curly-braces hold the values of an object, square-braces hold the values of arrays.
+
+Some differences is a JSON object both the name and value pair are enclosed in quotes, to denote both are strings. Edureka has a good video worth watching[https://www.youtube.com/watch?v=uw_rP5bV9r0]
 
 #### What is node.js?
 
@@ -124,47 +150,13 @@ Using both at the same time creates conflicts so use one or the other in the CLI
 [npm] CLI documentation link [https://docs.npmjs.com/cli-documentation/cli] 
 [yarn] CLI documentation [https://yarnpkg.com/lang/en/docs/cli/]
 
-- Some common CLI commands 
-
-[yarn add] [npm install] - (installs the package required on a project)
-[npm uninstall i](uninstall if the package not installed correctly)
-[yarn global add] [npm install global] (installs the package required on your OS)
-[yarn add node] -(installs node which it runs off)
-[yarn] [npm] start - (starts dev server)
-[yarn] [npm] run build - (builds static files for deployment [heroku] or other deployment packages)
-[yarn] [npm] test - (starts test runner)
-[yarn]/[npm] run eject - (IMPORTANT NO ROLL BACK -- removes the app and copies build dependencies, config files and scripts into the app directory)
-[npm update] - (updates packages)
-[npm outdated] (checks for outdated packages)
-[yarn run start backend]/ [yarn start:server]/ [npm run start backend]
-
-#### Setting node/ npm  packages/files & projects from scratch 
-
-1.	[npm init] [yarn init] (this initializes npm – the password and other prompts are invisible, you need to hit return till you get OK on all compilers).  
-2.	[npm i web-pack webpack-cli webpack-dev-server html-webpack-plugin –D] (installs webpack) [yarn add]
-3.	[npm i babel-loader style-loader css-loader sass-loader –D] (installs babel, css and sass pre-compilers or loaders)
-4.	[npm i @babel/core @babel/preset-env –D] (installs the babel & env files - babel transpiles jsx into es6)
-5.	[touch .babelrc] (creates a babel file in project)
-6.	[npm i node-sass –D] (installs sass) 
-7.	[mkdir src] (makes directory called source)
-8.	[touch src/index.html] [touch src/app.js] [touch src/style.scss] (makes files for html, css and vanilla js) 
-9.	[touch webpack.config.js] (in the main file not in the src file)
-10.	[npm i jquery –S] (installs j-query)
-11.	[npm run serve] (this is the listener)
-12.	[npm i react react-dom –S] (intalls react)
-13. [npm i axios –S] installs axios
-14.	[npm i mapbox-gl –S] (installs mapbox)
-15. [npm i react-router-dom –S] (installs the router component of react)
-16. [npm i axios react-router-dom bulma -S ] (installs axios, react router and bulma)
-17. [npm i dotenv-webpack –D] (installs the env files and webpack)
-18. [touch .env] (creates an env. file in project)
-19. [yarn add nodemon] [npm install nodemon] (installs nodemon to project)
-
 #### What is nodemon?
 
 Nodemon hot loads the back end server so you do not need to run ```node src/back-end/app.js```
 
 Check in your package-JSON for the install and read documentation [https://github.com/remy/nodemon] which helps bug fixing if you encounter challenges hot-loading.
+
+## Challenges List
 
 ##### Challenge -18 Setting up the back-end server with node and express
 
@@ -220,4 +212,77 @@ Install nodemon to hot-load back-end - change scripts files and run command to s
 #### Challenge -23 Add a loading button
 
 
+## Appendicies 
 
+#### Appendix-1 Some common CLI commands in yarn vs. npm
+
+[yarn add] [npm install] - (installs the package required on a project)
+[npm uninstall i](uninstall if the package not installed correctly)
+[yarn global add] [npm install global] (installs the package required on your OS)
+[yarn add node] -(installs node which it runs off)
+[yarn] [npm] start - (starts dev server)
+[yarn] [npm] run build - (builds static files for deployment [heroku] or other deployment packages)
+[yarn] [npm] test - (starts test runner)
+[yarn]/[npm] run eject - (IMPORTANT NO ROLL BACK -- removes the app and copies build dependencies, config files and scripts into the app directory)
+[npm update] - (updates packages)
+[npm outdated] (checks for outdated packages)
+[yarn run start backend]/ [yarn start:server]/ [npm run start backend]
+
+#### Appendix -2: Setting node/ npm  packages/files & projects from scratch 
+
+1.	[npm init] [yarn init] (this initializes npm – the password and other prompts are invisible, you need to hit return till you get OK on all compilers).  
+2.	[npm i web-pack webpack-cli webpack-dev-server html-webpack-plugin –D] (installs webpack) [yarn add]
+3.	[npm i babel-loader style-loader css-loader sass-loader –D] (installs babel, css and sass pre-compilers or loaders)
+4.	[npm i @babel/core @babel/preset-env –D] (installs the babel & env files - babel transpiles jsx into es6)
+5.	[touch .babelrc] (creates a babel file in project)
+6.	[npm i node-sass –D] (installs sass) 
+7.	[mkdir src] (makes directory called source)
+8.	[touch src/index.html] [touch src/app.js] [touch src/style.scss] (makes files for html, css and vanilla js) 
+9.	[touch webpack.config.js] (in the main file not in the src file)
+10.	[npm i jquery –S] (installs j-query)
+11.	[npm run serve] (this is the listener)
+12.	[npm i react react-dom –S] (intalls react)
+13. [npm i axios –S] installs axios
+14.	[npm i mapbox-gl –S] (installs mapbox)
+15. [npm i react-router-dom –S] (installs the router component of react)
+16. [npm i axios react-router-dom bulma -S ] (installs axios, react router and bulma)
+17. [npm i dotenv-webpack –D] (installs the env files and webpack)
+18. [touch .env] (creates an env. file in project)
+19. [yarn add nodemon] [npm install nodemon] (installs nodemon to project)
+
+### REST API CRUD LIFECYCLE - my notes from GA
+
+CREATE ONE NEW - POST -201 
+createRoute is the function (Create) GET
+Status is 201
+Export the route 
+Catch the error
+In the config create the router set up
+Then go to Insomnia (or your base url path)
+Do a post request
+Create the new animal object
+Send
+Booleans and numbers do not need inverted commas and boolean is lowercase
+Create is a get request and a post
+
+SHOW ONE - WITH ID - GET REQUEST - 200
+showRoute() is the function
+Show - get request and a post (Request and Show)
+Status is 200 (ok)
+Get the id
+.findById(req.params.id) you do not the the exact id because you have already clocked them in other pathways
+You need base_url/api/animals/5c87a2839f9ea114c58d524c
+For all the id requests in router
+router.route('/animals/:id')
+  .get(animals.show)
+
+
+EDIT AND UPDATE   - PUT 202
+Find by Id and update one
+In Insomnia - create object and only update key:value required to update
+
+
+FIND  AND DELETE   - DELETE 204
+Find by Id and delete one
+Blow up one (by Id) Blow up all (Delete)
+In Insomnia - remove all info and send
