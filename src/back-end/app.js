@@ -1,7 +1,8 @@
 const express = require('express');
 const app = express();
 const port = 3000;
+const films = require('./films-data');
 
-app.get('/', (req, res) => res.send('Kodflix App Says Hello World!'));
+app.get('/films/data', (req, res) => res.send(films.filmsData));
 
 app.listen(port, () => console.log(`Kodiri-Kodflix app listening on port ${port}!`));
