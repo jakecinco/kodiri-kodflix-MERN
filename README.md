@@ -28,9 +28,7 @@ Chakra, V8 and SpiderMonkey - JS engines - call stack is a single-thread and non
 
 Some other async methods are ```setState({]})``` event handlers ```onClick.()``` and ```setTimeOUt.()``` are some other examples.
 
-What's the difference between callbacks, promises and recursion
-
-API calls use async JS checkout Gray's Kodiri videos [https://www.youtube.com/watch?v=pX74__nD48I]/ [https://www.youtube.com/watch?v=F5XD1JNhkP8] [https://www.youtube.com/watch?v=PlhmNNNyYyo]
+What's the difference between callbacks, promises and recursion checkout Gray's Kodiri videos [https://www.youtube.com/watch?v=pX74__nD48I] [https://www.youtube.com/watch?v=F5XD1JNhkP8] [https://www.youtube.com/watch?v=PlhmNNNyYyogit]
 
 #### What is a REpresentational State Transfer or a REST-ful API?
 
@@ -46,11 +44,9 @@ The process of converting the data in javascript from a back-end database in a l
 
 Restful-React - As React defines itself as a front-end library, it allows users to figure out what works best for the app - this provides building blocks and flexiblity it also means that there are no protocols to follow, it does not prescribe how REST API's should be created.
 
-Read More on API's and MVC.
-[https://www.codecademy.com/articles/what-is-rest]
-[https://www.codecademy.com/articles/mvc]
+Read More on API's and MVC [https://www.codecademy.com/articles/what-is-rest] [https://www.codecademy.com/articles/mvc]
 
-#### What is JSON?
+#### What is JSON?
 
 JSON is a lightweight store of data into text so that HTTP calls can be made, parsed (interpreted) by browsers and sent back to databases. As it is a text-based format it is lightweight.  It is then  reconverted back into the format that the database requires. It therefore stores and transports data quickly and efficiently.
 
@@ -89,7 +85,7 @@ Good articles to read to understand how and why you would use Node.js as the bac
 * Netgurus guide [https://www.netguru.com/blog/use-node-js-backend] a good pdf that can be downloaded is on the website
 * Why use Node - Medium blog [https://medium.com/the-node-js-collection/why-the-hell-would-you-use-node-js-4b053b94ab8e]
 
-#### What is Express?
+#### What is Express?
 
 Express.js forms part of the middle-ware between the back-end server and the front-end ui-ux. 
 
@@ -111,11 +107,9 @@ Instead of writing code in nodes in the document, express methods help route res
 
 This back-end routing of the data happens through API calls and routing of URLs that are not visible to the end-user.
 
-
 Documentation [https://expressjs.com/en/4x/api.html#app]
 
 Reading-list:
-
 [https://jilles.me/getting-the-express-app-js/]
 [https://scotch.io/tutorials/learn-to-use-the-new-router-in-expressjs-4]
 [https://jilles.me/express-routing-the-beginners-guide/]
