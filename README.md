@@ -61,6 +61,38 @@ Good articles to read to understand how and why you would use Node.js as the bac
 * Netgurus guide [https://www.netguru.com/blog/use-node-js-backend] a good pdf that can be downloaded is on the website
 * Why use Node - Medium blog [https://medium.com/the-node-js-collection/why-the-hell-would-you-use-node-js-4b053b94ab8e]
 
+####  What is Express?
+
+Express.js forms part of the middle-ware between the back-end server and the front-end ui-ux. 
+
+Just as React is a library that manages browser-based data in state/ ui-ux changes and DOM manipulation, Express is a frame-work that manages requests from the servers' databases to the front-end.
+
+Express comes with it's own syntax and methods. It is a protocol and has a more rigid structure but is lightweight and very quick to set up. The basic code for set up to test the server is working is below.
+
+```
+const express = require('express');
+const app = express();
+const port = 3000;
+
+app.get('/', (req, res) => res.send('Kodflix App Says Hello World!'));
+
+app.listen(port, () => console.log(`Kodiri-Kodflix app listening on port ${port}!`));
+```
+
+Instead of writing code in nodes in the document, express methods help route responses and requests to and from the servers' databases to the front-end.
+
+This back-end routing of the data happens through API calls and routing of URLs that are not visible to the end-user.
+
+
+Documentation [https://expressjs.com/en/4x/api.html#app]
+
+Reading-list:
+
+[https://jilles.me/getting-the-express-app-js/]
+[https://scotch.io/tutorials/learn-to-use-the-new-router-in-expressjs-4]
+[https://jilles.me/express-routing-the-beginners-guide/]
+[https://expressjs.com/en/guide/routing.html]
+
 #### Back-end package managers - Node vs. Yarn
 
 Both are open source registries for software libraries for node.js, yarn is owned by Facebook, npm by npm Inc.
@@ -128,39 +160,6 @@ Using both at the same time creates conflicts so use one or the other in the CLI
 18. [touch .env] (creates an env. file in project)
 19. [yarn add nodemon] [npm install nodemon] (installs nodemon to project)
 
-####  An introduction to Express.js
-
-Express.js forms part of the middle-ware between the back-end server and the front-end ui-ux. 
-
-Just as React is a library that manages browser-based data in state/ ui-ux changes and DOM manipulation, Express is a frame-work that manages requests from the servers' databases to the front-end.
-
-Express comes with it's own syntax and methods. It is a protocol and has a more rigid structure but is lightweight and very quick to set up. The basic code for set up to test the server is working is below.
-
-```
-const express = require('express');
-const app = express();
-const port = 3000;
-
-app.get('/', (req, res) => res.send('Kodflix App Says Hello World!'));
-
-app.listen(port, () => console.log(`Kodiri-Kodflix app listening on port ${port}!`));
-```
-
-Instead of writing code in nodes in the document, express methods help route responses and requests to and from the servers' databases to the front-end.
-
-This back-end routing of the data happens through API calls and routing of URLs that are not visible to the end-user.
-
-
-Documentation [https://expressjs.com/en/4x/api.html#app]
-
-Reading-list:
-
-[https://jilles.me/getting-the-express-app-js/]
-[https://scotch.io/tutorials/learn-to-use-the-new-router-in-expressjs-4]
-[https://jilles.me/express-routing-the-beginners-guide/]
-[https://expressjs.com/en/guide/routing.html]
-
-
 #### What is nodemon?
 
 Nodemon hot loads the back end server so you do not need to run ```node src/back-end/app.js```
@@ -179,7 +178,7 @@ Reconfigure imports to all pages based on the new file/ folder structure run [ya
 Start on the backend - import express from npm and install/add it to the project
 In the BE src folder - create an app.js file and set up express [https://expressjs.com/en/starter/hello-world.html] check that the port is listening [node src/back-end/app.js ], refresh the browser and make sure that message is working in the FE port - this shows the runner has connected.
 
-Yarn commands to set up server
+- Yarn commands to set up server
 
 [yarn init] (intialise the project)
 [yarn add node] (install node)
@@ -216,4 +215,9 @@ You Tube tutorials to review at this stage:
 Install nodemon to hot-load back-end - change scripts files and run command to start backend server in terminal
 
 #### Challenge -21 Create a client-side and server-side port
+#### Challenge -22 Link the 2 servers
+#### Challenge -23 Deploy to Heroku
+#### Challenge -23 Add a loading button
+
+
 
