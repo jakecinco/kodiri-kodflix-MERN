@@ -24,11 +24,13 @@ For the back-end to connect to the front-end application programming interfaces 
 
 ### What is async JavaScript
 
-Chakra, V8 and SpiderMonkey - JS engines - call stack is a single-thread and non-blocking. Most non-JavaScript code is parsed synchronously - which means each thread executes one function before going on to the next. With call back functions, promises, passing by reference and other methods that can be written into JS, means that the thread can deal with multiple functions in a call stack on the task queue.
+Chakra, V8 and SpiderMonkey - JS engines - call stack is a single-thread and non-blocking. Most non-JavaScript code is parsed synchronously - which means each thread executes one function before going on to the next. With call back functions, promises, passing by reference and other methods that can be written into JS, means that the thread can deal with multiple functions in a call stack on the task queue. 
 
 Some other async methods are ```setState({]})``` event handlers ```onClick.()``` and ```setTimeOUt.()``` are some other examples.
 
-API calls use async JS  Gray's Kodiri video [https://www.youtube.com/watch?v=pX74__nD48I]
+What's the difference between callbacks, promises and recursion
+
+API calls use async JS checkout Gray's Kodiri videos [https://www.youtube.com/watch?v=pX74__nD48I]/ [https://www.youtube.com/watch?v=F5XD1JNhkP8] [https://www.youtube.com/watch?v=PlhmNNNyYyo]
 
 #### What is a REpresentational State Transfer or a REST-ful API?
 
@@ -87,7 +89,7 @@ Good articles to read to understand how and why you would use Node.js as the bac
 * Netgurus guide [https://www.netguru.com/blog/use-node-js-backend] a good pdf that can be downloaded is on the website
 * Why use Node - Medium blog [https://medium.com/the-node-js-collection/why-the-hell-would-you-use-node-js-4b053b94ab8e]
 
-####  What is Express?
+#### What is Express?
 
 Express.js forms part of the middle-ware between the back-end server and the front-end ui-ux. 
 
@@ -250,7 +252,7 @@ Install nodemon to hot-load back-end - change scripts files and run command to s
 18. [touch .env] (creates an env. file in project)
 19. [yarn add nodemon] [npm install nodemon] (installs nodemon to project)
 
-### REST API CRUD LIFECYCLE - my notes from GA
+#### Appendix -3: - my notes on CRUD
 
 CREATE ONE NEW - POST -201 
 createRoute is the function (Create) GET
@@ -286,3 +288,6 @@ FIND  AND DELETE   - DELETE 204
 Find by Id and delete one
 Blow up one (by Id) Blow up all (Delete)
 In Insomnia - remove all info and send
+
+
+Promises take 2 arguments ```return new Promise (resolve, reject)``` followed by```.then()``` blocks

@@ -3,6 +3,7 @@ const app = express();
 const port = 3001;
 const path = require('path');
 const films = require('./films-data');
+// build folder path
 
 app.get('/films/data', (req, res) => res.send(films.filmsData));
 
