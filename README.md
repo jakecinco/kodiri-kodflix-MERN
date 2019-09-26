@@ -264,25 +264,27 @@ Comment this out
 	}
 ```
 
-Write this function and see if it works
+Write this function and see if it works in the console
 
 ```componentDidMount() {
 		fetch(./api/films-data)
 	  .then (res => res.json())
-    .then (films => this.setState({filmsData}))
+    .then (films => this.setState({filmsData}, => (console.log("Film data successfully transfered from BE to FE"), filmsData)));
 
 	}
 ```
-
 
 Using the fetch API now get your data from the node environment you have created to store your data [https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch]
 
 A handy YouTube Video that explains the fetch method[https://www.youtube.com/watch?v=v0t42xBIYIs] and the connectivity between the frontend react app and the backend node & express
 
-Once you can see the component rendering with the data you can remove the commented out code and run the fetch method.
+Now check your render method to see if it needs to be adjusted...this is the next challenge
 
 #### Challenge -23 re-deploy to Heroku
 
+Once you can see the component rendering in the way it is you can remove the commented out code and link the back-end data and the front-end rendering of the data.
+
+Since there are several components this is the time that the app will break as the data is no longer linking from the front end files but need to be fetched and rendered from the backend node environment.
 
 ## Appendicies 
 

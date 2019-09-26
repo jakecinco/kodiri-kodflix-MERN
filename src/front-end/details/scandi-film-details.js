@@ -16,6 +16,11 @@ export default class ScandiFilmDetails extends Component {
 		let film = getFilms().find((film) => film.id === filmId);
 		this.setState({ film });
 	}
+	// componentDidMount() {
+	// 	fetch(./api/films-data)
+	//   .then (res => res.json())
+	// .then (films => this.setState({filmsData}, => (console.log("Film data successfully transfered from BE to FE"), filmsData)));
+	// }
 
 	render() {
 		if (this.state.film === undefined) {
