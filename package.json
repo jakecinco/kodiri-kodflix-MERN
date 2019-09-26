@@ -9,17 +9,16 @@
 		"react-dom": "^16.8.6",
 		"react-router-dom": "^5.0.1",
 		"react-scripts": "3.0.1",
-		"run-all": "^1.0.1",
-		"proxy": "http://localhost:3001"
+		"run-all": "^1.0.1"
 	},
 	"scripts": {
 		"start-frontend": "react-scripts start",
 		"start-backend": "nodemon src/back-end/app.js",
-		"start-all": "yarn run-all -p <task1> <task2> ",
 		"build": "react-scripts build",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject"
 	},
+	"proxy": "http://localhost:3001",
 	"eslintConfig": {
 		"extends": "react-app"
 	},
