@@ -286,6 +286,11 @@ Once you can see the component rendering in the way it is you can remove the com
 
 Since there are several components this is the time that the app will break as the data is no longer linking from the front end files but need to be fetched and rendered from the backend node environment.
 
+#### Challenge -24 add the images dynamically 
+[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals]
+
+#### Challenge -25 add loading image 
+
 ## Appendicies 
 
 #### Appendix-1 Some common CLI commands in yarn vs. npm

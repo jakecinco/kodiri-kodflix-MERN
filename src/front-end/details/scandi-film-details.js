@@ -12,16 +12,13 @@ export default class ScandiFilmDetails extends Component {
 	}
 
 	componentDidMount() {
-		let filmId = this.props.match.params.filmId;
-		let film = getFilms().find((film) => film.id === filmId);
-		this.setState({ film });
+		fetch('./films/films-data')
+			.then((res) => res.json())
+			.then((res) => {
+				this.setState({ res });
+			})
+			.catch((error) => console.log(error));
 	}
-	// componentDidMount() {
-	// 	fetch(./films/films-data)
-	//   .then (res => res.json())
-	// .then (films => this.setState({filmsData}, => (console.log("Film data successfully transfered from BE to FE"), filmsData)));
-	// }
-
 	render() {
 		if (this.state.film === undefined) {
 			return <Redirect to="/pageNotFound" />;
