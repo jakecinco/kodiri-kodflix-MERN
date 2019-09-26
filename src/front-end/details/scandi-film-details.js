@@ -17,7 +17,7 @@ export default class ScandiFilmDetails extends Component {
 		this.setState({ film });
 	}
 	// componentDidMount() {
-	// 	fetch(./api/films-data)
+	// 	fetch(./films/films-data)
 	//   .then (res => res.json())
 	// .then (films => this.setState({filmsData}, => (console.log("Film data successfully transfered from BE to FE"), filmsData)));
 	// }
