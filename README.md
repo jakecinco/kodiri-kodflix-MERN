@@ -178,6 +178,7 @@ Start on the backend - import express from npm and install/add it to the project
 In the BE src folder - create an app.js file and set up express [https://expressjs.com/en/starter/hello-world.html] check that the port is listening [node src/back-end/app.js], refresh the browser and make sure that message is working in the FE port - this shows the runner has connected.
 
 (See main section on express for set up)
+
 #### Challenge -19 reconfigure app files/ install node.js and express.js
 
 Reconfigure project files with 2 source folders one for the frontend and one for the backend.
@@ -195,13 +196,16 @@ Replace the ```export default function getFilms() { return [{}]}``` method which
 
 There several methods you can use to fetch data and the syntax is described well in this article -  Read [https://www.openmymind.net/2012/2/3/Node-Require-and-Exports/]
 
-For this task, use the ```app.get('path', function(request, response) { return response.send() })``` method, the first arguement is the backend API url path you create. ```app``` refers to the express app that has been declared as a variable when you set up the backend server with express. The second argument is a call-back function that takes two arguements - request and response. The request is the information/data/ payload to the server. The call back function returns the ```response.send()``` method which returns the data/payload from the server back to the user.
+Notes on the above documentation:-
+In the data section the module you can write is fairly simple ```module.exports = function filmsData() {return {[{  }]}}``` with the return statement returning an array of objects with your data enclosed.
+
+In the app.js file the  ```app.get('path', function(request, response) { return response.send() })``` method, the first arguement is the backend API url path you create. ```app``` refers to the express app that has been declared as a variable when you set up the backend server with express. The second argument is a call-back function that takes two arguements - request and response. The request is the information/data/ payload to the server. The call back function returns the ```response.send()``` method which returns the data/payload object (filmsData{}) from the server created in the node modeule via the ```module.exports``` function back to the user.
 
 Written in ES6 ```app.get('/api-filmsData/filmsData', (req, res) => res.send(films.filmsData));``` the ```app.get()``` method can be written in one line with an implicit return in the call back function.
 
 You need to have the backend server running so run ```node src/back-end/app.js``` and then check the path you have set up in the google chrome browser search bar  [3000/films/data] and the data should display on the screen. At this stage we have not changed the back-end port to 3001.
 
-You Tube tutorials to review at this stage really useful to get the concepts of node and modules:  Mosh on node [https://www.youtube.com/watch?v=TlB_eWDSMt4]
+You Tube tutorials to review at this stage really useful to get the concepts of node and modules - it gives you a good theoretical understanding of node. Mosh on node [https://www.youtube.com/watch?v=TlB_eWDSMt4]
 
 #### Challenge -20 Add nodemon
 
@@ -233,7 +237,6 @@ This highlights the difference between running the ports in sequence vs. in para
 Check the update on package-json - rename the scripts to start-frontend and start-backend so that you have 2 separate commands to run when you run the run-all command in your terminal
 
 In app.js change the port for the backend to ```const port = 3001;```
-
 
 Double check your scripts file - it should look like this with npm commands
 ```
@@ -270,8 +273,9 @@ Comment this out
 		this.setState({ film });
 	}
 ```
+Using the fetch API now get your data from the node environment you have created to store your data [https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch]
 
-Write this function and see if it works in the console, write it incorrectly to catch error as well
+A handy YouTube Video that explains the fetch method[https://www.youtube.com/watch?v=v0t42xBIYIs] and the connectivity between the frontend react app and the backend node & express.
 
 ```
 	componentDidMount() {
@@ -283,9 +287,7 @@ Write this function and see if it works in the console, write it incorrectly to 
 			.catch((error) => console.log(error));
 	}
 ```
-Using the fetch API now get your data from the node environment you have created to store your data [https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch]
-
-A handy YouTube Video that explains the fetch method[https://www.youtube.com/watch?v=v0t42xBIYIs] and the connectivity between the frontend react app and the backend node & express.
+Check to see if the function works in the console, write it incorrectly to catch error as well, you should see the data pulling from the api-filmsData in the network tab. You can now delete the commented out code and replace it with the fetch method to get all your data from the backend.
 
 #### Challenge -23 enable the backend server for deploy 
 
