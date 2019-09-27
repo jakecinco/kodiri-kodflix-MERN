@@ -172,15 +172,12 @@ Change the folder structure once you need data in the back end.
 Move all your files into 2 separate categories - FE (Front-end) and BE (Backend).
 
 In the FE src folder - move all the components created and their folders
-Reconfigure imports to all pages based on the new file/ folder structure run [yarn start] make sure the front end is still working as intended
+Reconfigure imports to all pages based on the new file/ folder structure run [yarn start] make sure the front end is still working as intended.
 
 Start on the backend - import express from npm and install/add it to the project
-In the BE src folder - create an app.js file and set up express [https://expressjs.com/en/starter/hello-world.html] check that the port is listening [node src/backend/app.js ], refresh the browser and make sure that message is working in the FE port - this shows the runner has connected.
+In the BE src folder - create an app.js file and set up express [https://expressjs.com/en/starter/hello-world.html] check that the port is listening [node src/back-end/app.js], refresh the browser and make sure that message is working in the FE port - this shows the runner has connected.
 
-
-Env files no strings, no spaces, no brackets it is not a js file
-Bring it in as a config file - not as a const
-
+(See main section on express for set up)
 #### Challenge -19 reconfigure app files/ install node.js and express.js
 
 Reconfigure project files with 2 source folders one for the frontend and one for the backend.
@@ -200,13 +197,11 @@ There several methods you can use to fetch data and the syntax is described well
 
 For this task, use the ```app.get('path', function(request, response) { return response.send() })``` method, the first arguement is the backend API url path you create. ```app``` refers to the express app that has been declared as a variable when you set up the backend server with express. The second argument is a call-back function that takes two arguements - request and response. The request is the information/data/ payload to the server. The call back function returns the ```response.send()``` method which returns the data/payload from the server back to the user.
 
-Written in ES6 ```app.get('/films/data', (req, res) => res.send(films.filmsData));``` the ```app.get()``` method can be written in one line with an implicit return in the call back function.
+Written in ES6 ```app.get('/api-filmsData/filmsData', (req, res) => res.send(films.filmsData));``` the ```app.get()``` method can be written in one line with an implicit return in the call back function.
 
-You need to have the backend server running so run ```node src/backend/app.js``` and then check the path you have set up in the google chrome browser search bar  [3000/films/data] and the data should display on the screen.
+You need to have the backend server running so run ```node src/back-end/app.js``` and then check the path you have set up in the google chrome browser search bar  [3000/films/data] and the data should display on the screen. At this stage we have not changed the back-end port to 3001.
 
-You Tube tutorials to review at this stage:
-* Short tutorial (Traversy Media - for beginners 24-minutes on YouTube)
-* Long tutorial Mosh [https://www.youtube.com/watch?v=TlB_eWDSMt4]
+You Tube tutorials to review at this stage really useful to get the concepts of node and modules:  Mosh on node [https://www.youtube.com/watch?v=TlB_eWDSMt4]
 
 #### Challenge -20 Add nodemon
 
@@ -227,8 +222,11 @@ In the case of my app this is
 
 #### Challenge -21 Create a client-side and server-side port in your local environment
 
+If you use yarn you can get stuck in this challenge -  read this section of the npm documentation [https://libraries.io/npm/yarn-run-all] and see the code block at the end for what your scripts file should look like
+
 Install run-all as a dev dependency [yarn add run-all]
 This will allow you to run the ports for the frontend and backend servers in parallel, 
+
 Read the documentation on ```npm -p``` and ```npm -s``` [https://www.npmjs.com/package/npm-run-all]
 This highlights the difference between running the ports in sequence vs. in parallel.
 
@@ -236,7 +234,16 @@ Check the update on package-json - rename the scripts to start-frontend and star
 
 In app.js change the port for the backend to ```const port = 3001;```
 
-Go to your terminal and check that this works   [yarn run-all -p start-frontend start-backend]  check your two 2 servers 3000 and 3001 to ensure they are running at the same time.
+
+Double check your scripts file - it should look like this with npm commands
+```
+"start": "npm-run-all -s build start-backend",
+		"start-frontend": "react-scripts start",
+		"start-backend": "nodemon src/back-end/app.js",
+		"start-dev": "npm-run-all -p start-frontend start-backend",
+```
+
+Go to your terminal and check that this works   [yarn run start-dev] or [yarn start-dev]  both should work, now check your two 2 servers 3000 and 3001 to ensure they are running at the same time.
 
 #### Challenge -22 Link the client-side react app and server-side express app
 
@@ -264,30 +271,64 @@ Comment this out
 	}
 ```
 
-Write this function and see if it works in the console
+Write this function and see if it works in the console, write it incorrectly to catch error as well
 
-```componentDidMount() {
-		fetch(./api/films-data)
-	  .then (res => res.json())
-    .then (films => this.setState({filmsData}, => (console.log("Film data successfully transfered from BE to FE"), filmsData)));
-
+```
+	componentDidMount() {
+		fetch('./api-filmsData/filmsData')
+			.then((res) => res.json())
+			.then((res) => {
+				this.setState({ res });
+			})
+			.catch((error) => console.log(error));
 	}
 ```
-
 Using the fetch API now get your data from the node environment you have created to store your data [https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch]
 
-A handy YouTube Video that explains the fetch method[https://www.youtube.com/watch?v=v0t42xBIYIs] and the connectivity between the frontend react app and the backend node & express
+A handy YouTube Video that explains the fetch method[https://www.youtube.com/watch?v=v0t42xBIYIs] and the connectivity between the frontend react app and the backend node & express.
 
-Now check your render method to see if it needs to be adjusted...this is the next challenge
-
-#### Challenge -23 re-deploy to Heroku
+#### Challenge -23 enable the backend server for deploy 
 
 Once you can see the component rendering in the way it is you can remove the commented out code and link the back-end data and the front-end rendering of the data.
 
-Since there are several components this is the time that the app will break as the data is no longer linking from the front end files but need to be fetched and rendered from the backend node environment.
+Since there are several components this is the time that the app will break as the data is no longer 
+linking from the front end files but need to be fetched and rendered from the backend node environment.
+
+As a pre-deploy you need to run [yarn run build] to set up a build all packages file path to deploy to heroku. Add an env. file. [yarn add .env] and the proxy server should be joined as one file for heroku
+
+The back-end app.js should look like this at this stage
+
+```
+// imports the express library post once added to package
+const express = require('express');
+// initialises the app
+const app = express();
+// creates 3001 for backend and 3000 for FE
+const port = process.env.PORT || 3001;
+// imports path module to run static files from server to client
+const path = require('path');
+// imports node module from films-data file
+const films = require('./api-filmsData');
+// Sends object films.filmsData as a payload via the node module from the api file as filmsData
+app.get('./api-filmsData/filmsData', (req, res) => res.send(films.filmsData));
+// uses static files, routes joins them as one for deploy
+app.use(express.static(path.join(__dirname, '../../build')));
+// gets static files and sends them to the root - index.html - from a file path after build
+app.get('*', function(req, res) {
+	res.sendFile(path.join(__dirname, '../../build', 'index.html'));
+});
+// tests that port listens with msg on terminal
+app.listen(port, () => console.log(`Kodiri-Kodflix app listening on port ${port}!`));
+```
+
+The comments helped me de-bug each line as this was the stage where things were not working.
+It is very important that the app works in the way it is intended to work before deploy otherwise it will not render correctly on the heroku app.
 
 #### Challenge -24 add the images dynamically 
-[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals]
+
+Introduce state and a constructor with a render method for the gallery component ```film-catalog-gallery``` replace the imports from react (importing the individual files from their location in the front-end assets folder).
+
+Use template literals - read documentation here: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals]
 
 #### Challenge -25 add loading image 
 
