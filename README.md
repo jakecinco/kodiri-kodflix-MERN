@@ -338,17 +338,17 @@ Use template literals - read documentation here: [https://developer.mozilla.org/
 
 #### Appendix-1 Some common CLI commands in yarn vs. npm
 
-[yarn add] [npm install] - (installs the package required on a project)
-[npm uninstall i](uninstall if the package not installed correctly)
-[yarn global add] [npm install global] (installs the package required on your OS)
-[yarn add node] -(installs node which it runs off)
-[yarn] [npm] start - (starts dev server)
-[yarn] [npm] run build - (builds static files for deployment [heroku] or other deployment packages)
-[yarn] [npm] test - (starts test runner)
-[yarn]/[npm] run eject - (IMPORTANT NO ROLL BACK -- removes the app and copies build dependencies, config files and scripts into the app directory)
-[npm update] - (updates packages)
-[npm outdated] (checks for outdated packages)
-[yarn run start backend]/ [yarn start:server]/ [npm run start backend]
+- [yarn add] [npm install] - (installs the package required on a project)
+- [npm uninstall i](uninstall if the package not installed correctly)
+- [yarn global add] [npm install global] (installs the package required on your OS)
+- [yarn add node] -(installs node which it runs off)
+- [yarn] [npm] start - (starts dev server)
+- [yarn] [npm] run build - (builds static files for deployment [heroku] or other deployment packages)
+- [yarn] [npm] test - (starts test runner)
+- [yarn]/[npm] run eject - (IMPORTANT NO ROLL BACK -- removes the app and copies build dependencies, config files and scripts into the app directory)
+- [npm update] - (updates packages)
+- [npm outdated] (checks for outdated packages)
+- [yarn run start backend]/ [yarn start:server]/ [npm run start backend]
 
 #### Appendix -2: How to set up a project with npm or yarn
 
@@ -356,13 +356,13 @@ Instead of npx create reactapp [appname], the way to set up a project is to buil
 
 - Yarn commands to set up server
 
-[yarn init] (intialise the project)
-[yarn add node] (install node)
-[yarn add express] (install express midware that runs data from server via axios to Postman/ Insomnia)
-[yarn add request-promise] [yarn add request] (sets up back end API to get methods of request-promise for async non-blocking threads to work)
-[yarn add axios] (installs axios runner from backend with JSON files to Insomnia or Postman Axios therefore you need body-parser)
-[yarn add body-Parser] (allows you to visualize data (json body) in insomnia or postman rather than the server  
-[Yarn add dotenv] (installs authentication tokens files)
+- [yarn init] (intialise the project)
+- [yarn add node] (install node)
+- [yarn add express] (install express midware that runs data from server via axios to Postman/ Insomnia)
+- [yarn add request-promise] [yarn add request] (sets up back end API to get methods of request-promise for async non-blocking threads to work)
+- [yarn add axios] (installs axios runner from backend with JSON files to Insomnia or Postman Axios therefore you need body-parser)
+- [yarn add body-Parser] (allows you to visualize data (json body) in insomnia or postman rather than the server  
+- [Yarn add dotenv] (installs authentication tokens files)
 
 
 1.	[npm init] [yarn init] (this initializes npm – the password and other prompts are invisible, you need to hit return till you get OK on all compilers).  
