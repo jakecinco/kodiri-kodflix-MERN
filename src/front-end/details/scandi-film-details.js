@@ -19,24 +19,26 @@ export default class ScandiFilmDetails extends Component {
 			.catch((error) => console.log(error));
 	}
 	render() {
-		if (this.state.film === undefined) {
+		// deconstruct state
+		let film = this.state.film;
+		if (film === undefined) {
 			return <Redirect to="/pageNotFound" />;
 		} else {
 			return (
 				<div className="film-details-container">
-					<h1 className="details-header">{this.state.film.name}</h1>
+					<h1 className="details-header">{film.name}</h1>
 
 					<div className="details-info">
 						<div className="details-cover-container">
-							<img alt={this.state.film.name} className="details-image" src={this.state.film.cover} />
+							<img alt={film.name} className="details-image" src={film.cover} />
 							<div className="details-image-overlay">
-								<h2>{this.state.film.country}</h2>
+								<h2>{film.country}</h2>
 							</div>
 						</div>
 
 						<div className="details-description-review">
-							<h2>{this.state.film.description}</h2>
-							<p>{this.state.film.review}</p>
+							<h2>{film.description}</h2>
+							<p>{film.review}</p>
 						</div>
 					</div>
 					<Link to="/">
