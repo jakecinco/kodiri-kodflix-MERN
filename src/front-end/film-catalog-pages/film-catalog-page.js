@@ -1,14 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import '../App.css';
 
-function FilmCatalog(props) {
-	return (
-		<Link to={`/${props.id}`} className="film-cover">
-			<img alt={'scandinavian-noir-film-cover'} src={props.cover} />
-			<div className="film-cover-overlay">
-				<h5>{props.description}</h5>
-			</div>
-		</Link>
-	);
+class FilmCatalog extends React.Component {
+	render() {
+		let { id, title } = this.props;
+		return (
+			<Link to={`/${id}`} className="film-cover">
+				<img alt={title} src={require(`../assets/${id}.jpg`)} />
+				<div className="film-cover-overlay">
+					<h5>{title}</h5>
+				</div>
+			</Link>
+		)
+	}
 }
 export default FilmCatalog;
